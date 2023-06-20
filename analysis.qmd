@@ -1,0 +1,24 @@
+---
+title: "Babynames"
+author: "David Kane"
+format: html
+execute: 
+  echo: false
+---
+
+
+```{r}
+#| message: false
+library(tidyverse)
+```
+
+```{r}
+x <- read_csv("data/i_names.csv", show_col_types = FALSE)
+x
+```
+
+
+
+
+
+
