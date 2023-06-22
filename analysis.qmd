@@ -27,7 +27,7 @@ x |>
     labs(title = 'Percentage of US Babies with Names Ending in "i"',
          subtitle = "Boy names ending with i are steadily increasing",
          x = "Year",
-         y = "Percent",
+         y = NULL,
          caption = "Babynames R Package",
          fill = "Sex") 
 ```
