@@ -14,8 +14,24 @@ library(tidyverse)
 
 ```{r}
 x <- read_csv("data/i_names.csv", show_col_types = FALSE)
-x
 ```
+
+```{r}
+x |> 
+  summarise(sum_n = sum(n), 
+            sum_prop = sum(prop),
+            .by = c(year, sex)) |> 
+  ggplot(aes(x = year, y = sum_prop, fill = sex)) +
+    geom_area() +
+    scale_y_continuous(labels = scales::percent_format()) +
+    labs(title = 'Percentage of US Babies with Names Ending in "i"',
+         subtitle = "Boy names ending with i are steadily increasing",
+         x = "Year",
+         y = "Percent",
+         caption = "Babynames R Package",
+         fill = "Sex") 
+```
+
 
 
 
